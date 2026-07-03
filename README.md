@@ -125,6 +125,39 @@ npm run dev
 
 前端使用 Vue Router，路由配置在 `src/router/index.js`。
 
+## 部署说明
+
+### 前端部署（Vercel）
+
+1. 访问 https://vercel.com，登录并新建项目
+2. 选择 GitHub 仓库 `Badwomanzzzzzz/-`
+3. 自动识别为 Vue 项目，点击 Deploy
+4. 部署成功后获得前端访问链接
+
+### 后端部署（Render）
+
+1. 访问 https://render.com，登录并新建 Web Service
+2. 选择 GitHub 仓库，指定 `backend` 目录
+3. 配置环境变量：
+   - DB_USER
+   - DB_PASSWORD
+   - DB_SERVER
+   - DB_DATABASE
+   - JWT_SECRET
+4. 部署成功后获得后端访问链接
+
+### 数据库部署（Azure SQL）
+
+1. 访问 https://azure.microsoft.com，创建 Azure SQL Database
+2. 配置防火墙规则，允许 Render 访问
+3. 在 Render 环境变量中配置数据库连接信息
+
+### 配置前端 API 地址
+
+在 Vercel 项目设置中添加环境变量：
+
+- VITE_API_BASE_URL=https://your-backend-url.onrender.com
+
 ## License
 
 MIT

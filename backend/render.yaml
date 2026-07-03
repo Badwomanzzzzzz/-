@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: textbook-management-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DB_USER
+        fromSecret: DB_USER
+      - key: DB_PASSWORD
+        fromSecret: DB_PASSWORD
+      - key: DB_SERVER
+        fromSecret: DB_SERVER
+      - key: DB_DATABASE
+        value: TextbookManagementSystem
+      - key: JWT_SECRET
+        fromSecret: JWT_SECRET
